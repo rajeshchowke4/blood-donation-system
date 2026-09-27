@@ -1,0 +1,527 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f7f7f7;
+    color: #222;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+button,
+input,
+select {
+    font: inherit;
+}
+
+/* Navbar */
+
+.navbar {
+    min-height: 70px;
+    background: #b91c1c;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 7%;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.brand-group {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.role-badge {
+    max-width: 140px;
+    overflow: hidden;
+    padding: 4px 7px;
+    border-radius: 4px;
+    font-size: 10px;
+    font-weight: bold;
+    line-height: 1.2;
+    text-overflow: ellipsis;
+    text-transform: uppercase;
+    white-space: nowrap;
+}
+
+.role-admin {
+    background: #ffedd5;
+    color: #7c2d12;
+}
+
+.role-staff {
+    background: #dcfce7;
+    color: #166534;
+}
+
+.role-user {
+    background: #f1f5f9;
+    color: #334155;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.nav-links a {
+    padding: 6px 0 4px;
+    border-bottom: 2px solid transparent;
+}
+
+.nav-links a[aria-current="page"] {
+    border-bottom-color: white;
+}
+
+.nav-links a:hover {
+    text-decoration: underline;
+}
+
+.nav-button {
+    background: white;
+    color: #b91c1c;
+    border: none;
+    padding: 9px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Home */
+
+.home {
+    min-height: calc(100vh - 70px);
+}
+
+.hero {
+    min-height: 500px;
+    background: linear-gradient(
+        135deg,
+        #991b1b,
+        #dc2626
+    );
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 60px 10%;
+}
+
+.hero h1 {
+    font-size: 55px;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 20px;
+    max-width: 550px;
+    line-height: 1.6;
+}
+
+.blood-icon {
+    font-size: 180px;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 15px;
+    margin-top: 30px;
+}
+
+.button {
+    background: white;
+    color: #b91c1c;
+    padding: 14px 22px;
+    border-radius: 6px;
+    font-weight: bold;
+}
+
+.button.secondary {
+    background: transparent;
+    color: white;
+    border: 2px solid white;
+}
+
+.features {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    padding: 60px 10%;
+}
+
+.feature-card,
+.dashboard-card,
+.donor-card,
+.request-card {
+    background: white;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
+}
+
+.feature-card h2 {
+    margin-bottom: 10px;
+}
+
+/* Authentication */
+
+.auth-container {
+    min-height: calc(100vh - 70px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+}
+
+.auth-card {
+    width: 100%;
+    max-width: 430px;
+    background: white;
+    padding: 35px;
+    border-radius: 10px;
+    box-shadow: 0 3px 15px rgba(0, 0, 0, 0.1);
+}
+
+.auth-card h1 {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.auth-card input,
+.form-page input,
+.form-page select,
+.search-form input,
+.search-form select {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.auth-card button,
+.form-page button,
+.search-form button {
+    width: 100%;
+    padding: 12px;
+    background: #dc2626;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.auth-card button:hover,
+.form-page button:hover,
+.search-form button:hover {
+    background: #b91c1c;
+}
+
+/* Pages */
+
+.page {
+    max-width: 1200px;
+    margin: auto;
+    padding: 40px 20px;
+}
+
+.page h1 {
+    margin-bottom: 15px;
+}
+
+.form-page {
+    max-width: 650px;
+    margin: 40px auto;
+    background: white;
+    padding: 35px;
+    border-radius: 10px;
+    box-shadow: 0 3px 15px rgba(0, 0, 0, 0.08);
+}
+
+.form-page h1 {
+    margin-bottom: 25px;
+}
+
+.form-page input,
+.form-page select {
+    display: block;
+}
+
+.checkbox {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 20px;
+}
+
+.checkbox input {
+    width: auto;
+}
+
+/* Dashboard */
+
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+    margin-top: 30px;
+}
+
+.dashboard-card:hover {
+    transform: translateY(-3px);
+    transition: 0.2s;
+}
+
+/* Search */
+
+.search-form {
+    display: grid;
+    grid-template-columns: 1fr 1fr 150px;
+    gap: 15px;
+    margin: 30px 0;
+}
+
+.donor-grid,
+.request-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.donor-card h2,
+.request-card h2 {
+    margin-bottom: 12px;
+}
+
+.blood-group {
+    display: inline-block;
+    background: #dc2626;
+    color: white;
+    padding: 8px 12px;
+    border-radius: 5px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+/* Messages */
+
+.error {
+    background: #fee2e2;
+    color: #991b1b;
+    padding: 12px;
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+
+.success {
+    background: #dcfce7;
+    color: #166534;
+    padding: 12px;
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+
+/* Admin */
+
+.admin-list {
+    margin: 20px 0 40px;
+}
+
+.admin-search {
+    display: grid;
+    gap: 8px;
+    max-width: 520px;
+    margin: 20px 0 32px;
+    font-weight: 600;
+}
+
+.admin-search input {
+    width: 100%;
+    padding: 11px 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.admin-user-form {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr)) auto;
+    align-items: end;
+    gap: 15px;
+    margin: 20px 0 40px;
+}
+
+.admin-user-form label {
+    display: grid;
+    gap: 8px;
+}
+
+.admin-user-form input {
+    width: 100%;
+    min-width: 0;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.admin-user-form select {
+    width: 100%;
+    min-width: 0;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.admin-user-form button {
+    min-height: 40px;
+    padding: 9px 14px;
+    background: #dc2626;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.admin-user-form button:disabled {
+    cursor: wait;
+    opacity: 0.7;
+}
+
+.admin-card {
+    background: white;
+    padding: 20px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.admin-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.admin-actions select {
+    padding: 8px;
+}
+
+.staff-filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 24px 0;
+}
+
+.staff-filters button {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 9px 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background: white;
+    color: #222;
+    cursor: pointer;
+}
+
+.staff-filters button.active {
+    border-color: #b91c1c;
+    background: #b91c1c;
+    color: white;
+}
+
+.staff-request-info p {
+    margin-top: 5px;
+}
+
+.staff-request-info small {
+    display: inline-block;
+    margin-top: 8px;
+    color: #555;
+}
+
+.staff-status-control {
+    display: grid;
+    gap: 6px;
+    min-width: 150px;
+}
+
+.staff-status-control select {
+    padding: 8px;
+}
+
+.staff-empty {
+    margin: 24px 0;
+}
+
+.danger {
+    background: #991b1b;
+    color: white;
+    border: none;
+    padding: 9px 14px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Responsive */
+
+@media (max-width: 800px) {
+    .navbar {
+        flex-direction: column;
+        padding: 20px;
+        gap: 15px;
+    }
+
+    .nav-links {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .hero {
+        flex-direction: column;
+        text-align: center;
+        padding: 50px 20px;
+    }
+
+    .hero h1 {
+        font-size: 40px;
+    }
+
+    .blood-icon {
+        font-size: 100px;
+    }
+
+    .features,
+    .donor-grid,
+    .request-grid,
+    .dashboard-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .search-form {
+        grid-template-columns: 1fr;
+    }
+
+    .admin-user-form {
+        grid-template-columns: 1fr;
+    }
+
+    .admin-card {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+}
