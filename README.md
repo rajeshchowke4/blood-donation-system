@@ -248,13 +248,13 @@ This project helped me gain practical experience in:
 ### 1. Clone the repository
 
 ```bash
-git clone https://github.com/rajeshchowke4/first-job-portfolio.git
+git clone https://github.com/rajeshchowke4/portfolio
 ```
 
 ### 2. Navigate to the project
 
 ```bash
-cd first-job-portfolio
+cd portfolio
 ```
 
 ### 3. Install dependencies
@@ -289,7 +289,7 @@ http://localhost:3000
 
 ## 🌐 Live Portfolio
 
-🚀 **[Visit My Live Portfolio](https://rajeshchowke4.github.io/first-job-portfolio/)**
+🚀 **[Visit My Live Portfolio](https://rajeshchowke4.github.io/portfolio/)**
 
 ---
 
