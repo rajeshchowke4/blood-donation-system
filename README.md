@@ -81,80 +81,242 @@ The system prioritizes security through JWT authentication, password hashing, an
 - **Code Quality**: ESLint 10.10.0
 - **Type Checking**: React TypeScript support
 
-## 📁 Project Structure
-blood-donation-system/ ├── client/ # Frontend React application │ ├── src/ │ │ ├── components/ # Reusable React components │ │ │ ├── Navbar.jsx │ │ │ ├── Footer.jsx │ │ │ ├── DonorForm.jsx │ │ │ ├── RequestForm.jsx │ │ │ └── Dashboard.jsx │ │ ├── pages/ # Page components │ │ │ ├── Home.jsx │ │ │ ├── Login.jsx │ │ │ ├── Register.jsx │ │ │ ├── DonorSearch.jsx │ │ │ ├── RequestTracker.jsx │ │ │ └── AdminPanel.jsx │ │ ├── context/ # React Context API │ │ │ └── AuthContext.jsx │ │ ├── hooks/ # Custom React hooks │ │ │ ├── useAuth.js │ │ │ └── useFetch.js │ │ ├── services/ # API service layer │ │ │ ├── authService.js │ │ │ ├── donorService.js │ │ │ ├── requestService.js │ │ │ └── adminService.js │ │ ├── styles/ # Global and component styles │ │ │ ├── index.css │ │ │ ├── components.css │ │ │ └── pages.css │ │ ├── App.jsx # Root component │ │ └── main.jsx # Entry point │ ├── package.json │ ├── vite.config.js │ ├── eslint.config.js │ └── README.md │ ├── server/ # Backend Express application │ ├── models/ # Mongoose schemas │ │ ├── User.js │ │ ├── Donor.js │ │ ├── BloodRequest.js │ │ └── Admin.js │ ├── routes/ # API route definitions │ │ ├── auth.js │ │ ├── donors.js │ │ ├── requests.js │ │ ├── admin.js │ │ └── users.js │ ├── controllers/ # Business logic │ │ ├── authController.js │ │ ├── donorController.js │ │ ├── requestController.js │ │ └── adminController.js │ ├── middleware/ # Custom middleware │ │ ├── auth.js # JWT verification │ │ ├── roleCheck.js # Role-based access │ │ └── errorHandler.js # Error handling │ ├── config/ # Configuration files │ │ ├── database.js # MongoDB connection │ │ └── constants.js # App constants │ ├── scripts/ # Utility scripts │ │ └── makeAdmin.js # Admin creation script │ ├── utils/ # Utility functions │ │ ├── validators.js │ │ ├── tokenGenerator.js │ │ └── emailService.js │ ├── server.js # Application entry point │ ├── package.json │ ├── .env.example │ └── README.md │ ├── .gitignore ├── LICENSE # MIT License └── README.md # This file
+# 📁 Project Structure
 
-Code
+```text
+blood-donation-system/
+│
+├── client/                              # Frontend React application
+│   ├── src/
+│   │   ├── components/                  # Reusable React components
+│   │   │   ├── Navbar.jsx
+│   │   │   ├── Footer.jsx
+│   │   │   ├── DonorForm.jsx
+│   │   │   ├── RequestForm.jsx
+│   │   │   └── Dashboard.jsx
+│   │   │
+│   │   ├── pages/                       # Page components
+│   │   │   ├── Home.jsx
+│   │   │   ├── Login.jsx
+│   │   │   ├── Register.jsx
+│   │   │   ├── DonorSearch.jsx
+│   │   │   ├── RequestTracker.jsx
+│   │   │   └── AdminPanel.jsx
+│   │   │
+│   │   ├── context/                     # React Context API
+│   │   │   └── AuthContext.jsx
+│   │   │
+│   │   ├── hooks/                       # Custom React hooks
+│   │   │   ├── useAuth.js
+│   │   │   └── useFetch.js
+│   │   │
+│   │   ├── services/                    # API service layer
+│   │   │   ├── authService.js
+│   │   │   ├── donorService.js
+│   │   │   ├── requestService.js
+│   │   │   └── adminService.js
+│   │   │
+│   │   ├── styles/                      # Global and component styles
+│   │   │   ├── index.css
+│   │   │   ├── components.css
+│   │   │   └── pages.css
+│   │   │
+│   │   ├── App.jsx                      # Root component
+│   │   └── main.jsx                     # Application entry point
+│   │
+│   ├── package.json
+│   ├── vite.config.js
+│   ├── eslint.config.js
+│   └── README.md
+│
+├── server/                              # Backend Express application
+│   ├── models/                          # Mongoose schemas
+│   │   ├── User.js
+│   │   ├── Donor.js
+│   │   ├── BloodRequest.js
+│   │   └── Admin.js
+│   │
+│   ├── routes/                          # API route definitions
+│   │   ├── auth.js
+│   │   ├── donors.js
+│   │   ├── requests.js
+│   │   ├── admin.js
+│   │   └── users.js
+│   │
+│   ├── controllers/                     # Business logic
+│   │   ├── authController.js
+│   │   ├── donorController.js
+│   │   ├── requestController.js
+│   │   └── adminController.js
+│   │
+│   ├── middleware/                      # Custom middleware
+│   │   ├── auth.js                      # JWT verification
+│   │   ├── roleCheck.js                 # Role-based access
+│   │   └── errorHandler.js              # Error handling
+│   │
+│   ├── config/                           # Configuration files
+│   │   ├── database.js                  # MongoDB connection
+│   │   └── constants.js                 # Application constants
+│   │
+│   ├── scripts/                          # Utility scripts
+│   │   └── makeAdmin.js                 # Admin creation script
+│   │
+│   ├── utils/                            # Utility functions
+│   │   ├── validators.js
+│   │   ├── tokenGenerator.js
+│   │   └── emailService.js
+│   │
+│   ├── server.js                         # Backend entry point
+│   ├── package.json
+│   ├── .env.example
+│   └── README.md
+│
+├── .gitignore
+├── LICENSE                               # MIT License
+└── README.md                             # Project documentation
+```
 
-## 🚀 Installation
+---
 
-### Prerequisites
-- Node.js (v16 or higher)
-- MongoDB (local or Atlas)
-- npm or yarn package manager
+# 🚀 Installation
 
-### Backend Setup
+## Prerequisites
 
-1. **Clone the repository**
-   ```bash
-   git clone https://github.com/rajeshchowke4/blood-donation-system.git
-   cd blood-donation-system/server
-Install dependencies
+Before installing the project, make sure you have:
 
-bash
+* **Node.js v16 or higher**
+* **MongoDB** local installation or MongoDB Atlas
+* **npm** or **Yarn**
+* **Git**
+
+---
+
+## Backend Setup
+
+### 1. Clone the Repository
+
+```bash
+git clone https://github.com/rajeshchowke4/blood-donation-system.git
+cd blood-donation-system/server
+```
+
+### 2. Install Dependencies
+
+```bash
 npm install
-Environment configuration
+```
 
-bash
+### 3. Configure Environment Variables
+
+Copy the example environment file:
+
+```bash
 cp .env.example .env
-Update .env with your configuration:
+```
 
-env
+Update the `.env` file with your configuration:
+
+```env
 PORT=5000
 MONGODB_URI=mongodb+srv://username:password@cluster.mongodb.net/blood-donation
 JWT_SECRET=your_jwt_secret_key_here
 NODE_ENV=development
 CLIENT_URL=http://localhost:5173
-Start the server
+```
 
-bash
+> **Note:** Replace the MongoDB username, password, cluster URL, and JWT secret with your actual values.
+
+### 4. Start the Backend Server
+
+```bash
 npm run dev
-Server runs on http://localhost:5000
+```
 
-Frontend Setup
-Navigate to client directory
+The backend server will run at:
 
-bash
+```text
+http://localhost:5000
+```
+
+---
+
+# 💻 Frontend Setup
+
+Open another terminal and navigate to the client directory:
+
+```bash
 cd ../client
-Install dependencies
+```
 
-bash
+### 1. Install Dependencies
+
+```bash
 npm install
-Environment configuration
+```
 
-bash
+### 2. Configure Environment Variables
+
+Create a `.env` file:
+
+```bash
 cp .env.example .env
-Update .env:
+```
 
-env
+Update it with:
+
+```env
 VITE_API_URL=http://localhost:5000/api
-Start development server
+```
 
-bash
+### 3. Start the Development Server
+
+```bash
 npm run dev
-Application runs on http://localhost:5173
+```
 
-⚙️ Configuration
-Database Schema
-Users Collection
+The frontend application will run at:
 
-JavaScript
+```text
+http://localhost:5173
+```
+
+---
+
+# ⚙️ Configuration
+
+The application uses environment variables for database connections, authentication, and frontend/backend communication.
+
+### Backend `.env`
+
+```env
+PORT=5000
+MONGODB_URI=your_mongodb_connection_string
+JWT_SECRET=your_jwt_secret_key
+NODE_ENV=development
+CLIENT_URL=http://localhost:5173
+```
+
+### Frontend `.env`
+
+```env
+VITE_API_URL=http://localhost:5000/api
+```
+
+> **Security:** Never commit your `.env` file or expose your JWT secret and MongoDB credentials publicly.
+
+---
+
+# 📊 Database Schema
+
+## Users Collection
+
+```javascript
 {
   _id: ObjectId,
   name: String,
-  email: String (unique),
-  password: String (hashed),
-  role: String (enum: ["donor", "staff", "admin"]),
+  email: String,             // Unique
+  password: String,          // Hashed
+  role: String,              // "donor", "staff", "admin"
   bloodGroup: String,
   city: String,
   phone: String,
@@ -162,9 +324,11 @@ JavaScript
   createdAt: Date,
   updatedAt: Date
 }
-Blood Requests Collection
+```
 
-JavaScript
+## Blood Requests Collection
+
+```javascript
 {
   _id: ObjectId,
   recipientName: String,
@@ -172,23 +336,60 @@ JavaScript
   quantity: Number,
   hospital: String,
   city: String,
-  status: String (enum: ["pending", "approved", "completed", "rejected"]),
+  status: String,            // "pending", "approved", "completed", "rejected"
   requiredBy: Date,
-  submittedBy: ObjectId (User reference),
-  approvedBy: ObjectId (Staff reference),
+  submittedBy: ObjectId,     // User reference
+  approvedBy: ObjectId,      // Staff reference
   createdAt: Date,
   updatedAt: Date
 }
-JWT Configuration
+```
+
+---
+
+# 🔐 JWT Configuration
+
+The application uses **JSON Web Tokens (JWT)** for authentication.
+
+### Configuration
+
+```text
 Algorithm: HS256
 Expiration: 24 hours
-Payload: { userId, role, email }
-📖 Usage
-User Registration
-bash
+```
+
+### JWT Payload
+
+```javascript
+{
+  userId,
+  role,
+  email
+}
+```
+
+The generated JWT is sent with protected API requests using the following header:
+
+```http
+Authorization: Bearer <jwt_token>
+```
+
+---
+
+# 📖 API Usage
+
+## User Registration
+
+### Request
+
+```http
 POST /api/auth/register
 Content-Type: application/json
+```
 
+### Body
+
+```json
 {
   "name": "John Doe",
   "email": "john@example.com",
@@ -197,25 +398,56 @@ Content-Type: application/json
   "city": "New York",
   "phone": "1234567890"
 }
-User Login
-bash
+```
+
+---
+
+## User Login
+
+### Request
+
+```http
 POST /api/auth/login
 Content-Type: application/json
+```
 
+### Body
+
+```json
 {
   "email": "john@example.com",
   "password": "securePassword123"
 }
-Search Donors
-bash
+```
+
+---
+
+## Search Donors
+
+### Request
+
+```http
 GET /api/donors/search?bloodGroup=O+&city=New%20York
 Authorization: Bearer <jwt_token>
-Submit Blood Request
-bash
+```
+
+This endpoint searches for donors based on blood group and city.
+
+---
+
+## Submit Blood Request
+
+### Request
+
+```http
 POST /api/requests
 Content-Type: application/json
 Authorization: Bearer <jwt_token>
+```
 
+### Body
+
+```json
 {
   "recipientName": "Patient Name",
   "bloodGroup": "O+",
@@ -224,60 +456,220 @@ Authorization: Bearer <jwt_token>
   "city": "New York",
   "requiredBy": "2024-10-15"
 }
-🏗️ Architecture
-Authentication Flow
-Code
-Client → Login → Server
-  ↓
-Server validates credentials against hashed password
-  ↓
-JWT token generated and returned
-  ↓
-Client stores token in localStorage/sessionStorage
-  ↓
-Token included in Authorization header for protected routes
-Request Workflow
-Code
+```
+
+---
+
+# 🏗️ Architecture
+
+## Authentication Flow
+
+```text
+┌──────────────┐
+│    Client    │
+└──────┬───────┘
+       │
+       ▼
+┌──────────────┐
+│     Login    │
+└──────┬───────┘
+       │
+       ▼
+┌──────────────────────┐
+│ Server validates     │
+│ user credentials     │
+└──────────┬───────────┘
+           │
+           ▼
+┌──────────────────────┐
+│ JWT token generated  │
+│ and returned         │
+└──────────┬───────────┘
+           │
+           ▼
+┌──────────────────────┐
+│ Client stores token  │
+│ localStorage /       │
+│ sessionStorage       │
+└──────────┬───────────┘
+           │
+           ▼
+┌──────────────────────┐
+│ Token included in    │
+│ protected requests   │
+└──────────────────────┘
+```
+
+---
+
+## Blood Request Workflow
+
+```text
 Donor Registration
-  ↓
+        ↓
 Donor Profile Creation
-  ↓
-Recipient submits Blood Request
-  ↓
-Staff reviews request
-  ↓
-Request Approved/Rejected
-  ↓
-Donor notified (via email/notification)
-  ↓
-Request completed and tracked
-📝 API Endpoints
-Authentication
-POST /api/auth/register - User registration
-POST /api/auth/login - User login
-POST /api/auth/logout - User logout
-Donors
-GET /api/donors - List all donors (staff/admin only)
-GET /api/donors/search - Search donors by criteria
-GET /api/donors/:id - Get donor details
-PUT /api/donors/:id - Update donor profile
-Blood Requests
-GET /api/requests - List requests (role-based)
-POST /api/requests - Create new request
-GET /api/requests/:id - Get request details
-PUT /api/requests/:id/status - Update request status (staff/admin)
-Admin
-GET /api/admin/users - List all users
-GET /api/admin/statistics - System statistics
-POST /api/admin/users/:id/promote - Promote user role
-🤝 Contributing
-Fork the repository
-Create a feature branch (git checkout -b feature/AmazingFeature)
-Commit changes (git commit -m 'Add some AmazingFeature')
-Push to branch (git push origin feature/AmazingFeature)
-Open a Pull Request
-📄 License
-This project is licensed under the MIT License - see the LICENSE file for details.
+        ↓
+Recipient Submits Blood Request
+        ↓
+Staff Reviews Request
+        ↓
+Request Approved / Rejected
+        ↓
+Donor Notified
+        ↓
+Request Completed
+        ↓
+Request Tracked
+```
+
+---
+
+# 📝 API Endpoints
+
+## Authentication
+
+| Method | Endpoint             | Description       |
+| ------ | -------------------- | ----------------- |
+| POST   | `/api/auth/register` | User registration |
+| POST   | `/api/auth/login`    | User login        |
+| POST   | `/api/auth/logout`   | User logout       |
+
+## Donors
+
+| Method | Endpoint             | Description                   |
+| ------ | -------------------- | ----------------------------- |
+| GET    | `/api/donors`        | List all donors — staff/admin |
+| GET    | `/api/donors/search` | Search donors by criteria     |
+| GET    | `/api/donors/:id`    | Get donor details             |
+| PUT    | `/api/donors/:id`    | Update donor profile          |
+
+## Blood Requests
+
+| Method | Endpoint                   | Description                         |
+| ------ | -------------------------- | ----------------------------------- |
+| GET    | `/api/requests`            | List requests based on role         |
+| POST   | `/api/requests`            | Create a blood request              |
+| GET    | `/api/requests/:id`        | Get request details                 |
+| PUT    | `/api/requests/:id/status` | Update request status — staff/admin |
+
+## Admin
+
+| Method | Endpoint                       | Description           |
+| ------ | ------------------------------ | --------------------- |
+| GET    | `/api/admin/users`             | List all users        |
+| GET    | `/api/admin/statistics`        | Get system statistics |
+| POST   | `/api/admin/users/:id/promote` | Promote a user role   |
+
+---
+
+# 🤝 Contributing
+
+Contributions are welcome!
+
+### 1. Fork the Repository
+
+Fork this repository to your GitHub account.
+
+### 2. Create a Feature Branch
+
+```bash
+git checkout -b feature/AmazingFeature
+```
+
+### 3. Commit Your Changes
+
+```bash
+git commit -m "Add some AmazingFeature"
+```
+
+### 4. Push the Branch
+
+```bash
+git push origin feature/AmazingFeature
+```
+
+### 5. Open a Pull Request
+
+Create a Pull Request on GitHub describing your changes.
+
+---
+
+# 📄 License
+
+This project is licensed under the **MIT License**.
+
+See the [LICENSE](LICENSE) file for more information.
+
+---
+
+# 👤 Author
+
+## Rajesh Chowke
+
+**GitHub:** [@rajeshchowke4](https://github.com/rajeshchowke4)
+
+---
+
+# 🙏 Acknowledgments
+
+Special thanks to the communities and technologies that make this project possible:
+
+* ⚛️ React and Vite communities for excellent frontend tooling
+* 🍃 MongoDB and Mongoose for database solutions
+* 🚀 Express.js for the backend framework
+* 🟢 Node.js for the JavaScript runtime
+* 🐙 GitHub for version control and collaboration
+
+---
+
+## ⭐ Project Overview
+
+The **Blood Donation System** provides a centralized platform for connecting blood donors with people who need blood. It supports user authentication, donor searching, blood request management, staff approval workflows, and administrative operations.
+
+### Key Components
+
+| Component       | Technology                |
+| --------------- | ------------------------- |
+| Frontend        | React + Vite              |
+| Backend         | Node.js + Express.js      |
+| Database        | MongoDB + Mongoose        |
+| Authentication  | JWT                       |
+| Authorization   | Role-Based Access Control |
+| API             | REST API                  |
+| Version Control | Git + GitHub              |
+
+---
+
+## 🚀 Getting Started
+
+After completing the setup, run the backend and frontend in separate terminals.
+
+### Terminal 1 — Backend
+
+```bash
+cd blood-donation-system/server
+npm install
+npm run dev
+```
+
+### Terminal 2 — Frontend
+
+```bash
+cd blood-donation-system/client
+npm install
+npm run dev
+```
+
+Then open:
+
+```text
+Frontend: http://localhost:5173
+Backend:  http://localhost:5000
+```
+
+---
+
+**Made with ❤️ by Rajesh Chowke**
 
 👤 Author
 Rajesh Chowke
