@@ -1,684 +1,416 @@
-# 🩸 Blood Donation Management System
+# 👋 Hi, I'm Rajesh Chowke
 
-A comprehensive full-stack web application designed to streamline blood donation management by connecting donors with recipients, managing requests, and providing role-based administrative workflows.
+### Junior Full-Stack Developer
 
-## 📋 Table of Contents
+I'm an aspiring Full-Stack Developer passionate about building web applications and learning modern software development practices.
 
-- [Overview](#overview)
-- [Features](#features)
-- [Tech Stack](#tech-stack)
-- [Project Structure](#project-structure)
-- [Installation](#installation)
-- [Configuration](#configuration)
-- [Usage](#usage)
-- [API Documentation](#api-documentation)
-- [Architecture](#architecture)
-- [Contributing](#contributing)
-- [License](#license)
+I enjoy working with **React, Node.js, Express, databases, REST APIs, Docker, and GitHub Actions**.
 
-## 🎯 Overview
+---
 
-This application facilitates blood donation management with multiple user roles and workflows:
+# 🚀 Featured Projects
 
-- **Donors**: Register profiles and manage their donation information
-- **Recipients**: Submit blood requests and track their status
-- **Staff**: Review and manage blood requests
-- **Administrators**: Oversee the entire system with elevated privileges
+## 1. CRUD Product Management App
 
-The system prioritizes security through JWT authentication, password hashing, and role-based access control (RBAC).
+A full-stack product management application built to demonstrate my skills in **frontend development, backend APIs, database management, authentication, testing, and deployment**.
 
-## ✨ Features
+### ✨ Features
 
-### Donor Management
-- User registration with validation
-- Donor profile creation and management
-- Blood group and location-based registration
-- Donation history tracking
+* 🔐 User signup and login
+* 📦 Create products
+* 📋 View products
+* ✏️ Update products
+* 🗑️ Delete products
+* 🔎 Search and filter products
+* 🔑 Token-based authentication
+* ✅ Input validation
+* 🧪 Automated testing
+* 🚀 CI/CD using GitHub Actions
 
-### Search & Discovery
-- Advanced search by blood group
-- Location-based donor filtering
-- Real-time availability status
-- Donor verification indicators
+### 🛠️ Technologies
 
-### Blood Request System
-- Submit blood requests with required specifications
-- Request status tracking (Pending, Approved, Completed, Rejected)
-- Request history and management
-- Automated notifications
+* React
+* React Router
+* Tailwind CSS
+* Node.js
+* Express.js
+* REST API
+* MySQL
+* Jest
+* React Testing Library
+* Supertest
+* Docker
+* GitHub Actions
 
-### Role-Based Access Control
-- **Donor Role**: Create profiles, view requests
-- **Staff Role**: Review and manage requests
-- **Admin Role**: System configuration, user management, analytics
+---
 
-### Security
-- JWT-based authentication
-- Password hashing with bcryptjs
-- Secure session management
-- CORS protection
-- Environment-based configuration
+## 2. 🩸 Blood Donation Management System
 
-## 🛠️ Tech Stack
+A full-stack **Blood Donation Management System** developed using the **MERN Stack**. The application is designed to help manage blood donors, blood requests, users, and donation-related information through a centralized web application.
+
+### ✨ Features
+
+* 👤 User registration and login
+* 🔐 Secure authentication
+* 🩸 Blood donor management
+* 📋 Blood donation requests
+* 🔎 Search and filter donors
+* 🏥 Manage blood requests
+* 📊 Dashboard for managing information
+* 👨‍💼 Admin management
+* 🔑 Role-based access control
+* 🗄️ MongoDB database
+* 🔗 REST API
+* 📱 Responsive user interface
+
+### 🛠️ Tech Stack
+
+#### Frontend
+
+* React.js
+* JavaScript
+* HTML5
+* CSS3
+* React Router
+
+#### Backend
+
+* Node.js
+* Express.js
+* REST API
+
+#### Database
+
+* MongoDB
+* MongoDB Atlas
+
+#### Authentication & Security
+
+* JWT
+* Password authentication
+* Role-based authorization
+
+#### Development Tools
+
+* Git
+* GitHub
+* VS Code
+* npm
+* Vite
+
+### 🏗️ Architecture
+
+```text
+┌──────────────────────────┐
+│       React Frontend     │
+│                          │
+│  Login / Register        │
+│  Donor Management        │
+│  Blood Requests          │
+│  Dashboard               │
+└────────────┬─────────────┘
+             │
+             │ REST API
+             ▼
+┌──────────────────────────┐
+│    Node.js + Express     │
+│         Backend          │
+│                          │
+│ Authentication           │
+│ Business Logic           │
+│ API Routes               │
+└────────────┬─────────────┘
+             │
+             │ Mongoose
+             ▼
+┌──────────────────────────┐
+│        MongoDB           │
+│                          │
+│ Users                    │
+│ Donors                   │
+│ Blood Requests           │
+│ Other Application Data   │
+└──────────────────────────┘
+```
+
+### 🔄 Application Flow
+
+```text
+User
+  ↓
+React Frontend
+  ↓
+API Request
+  ↓
+Express.js Server
+  ↓
+Authentication / Validation
+  ↓
+MongoDB
+  ↓
+Response
+  ↓
+React UI
+```
+
+### 📌 Project Purpose
+
+The main goal of this project is to provide a digital platform for managing blood donation activities and making donor and blood-request information easier to organize.
+
+This project helped me gain practical experience in:
+
+* Building MERN stack applications
+* Creating REST APIs
+* Working with MongoDB
+* Connecting React with Express APIs
+* User authentication
+* JWT-based authorization
+* Role-based access control
+* CRUD operations
+* Managing application state
+* Building responsive interfaces
+
+---
+
+## 🛠️ Overall Tech Stack
 
 ### Frontend
-- **Framework**: React 19.2.8
-- **Build Tool**: Vite 8.3.0
-- **Routing**: React Router DOM 7.18.4
-- **Styling**: CSS (custom)
-- **Authentication**: JWT with React context
+
+* React.js
+* JavaScript
+* HTML5
+* CSS3
+* React Router
+* Tailwind CSS
 
 ### Backend
-- **Runtime**: Node.js
-- **Framework**: Express 5.2.1
-- **Database**: MongoDB
-- **ODM**: Mongoose 9.10.2
-- **Security**: bcryptjs 3.0.3, jsonwebtoken 9.0.3
-- **Middleware**: CORS 2.8.6, dotenv 18.0.4
 
-### Development Tools
-- **Server Auto-reload**: Nodemon 3.1.14
-- **Code Quality**: ESLint 10.10.0
-- **Type Checking**: React TypeScript support
+* Node.js
+* Express.js
+* REST APIs
 
-# 📁 Project Structure
+### Databases
+
+* MySQL
+* MongoDB
+* MongoDB Atlas
+
+### Authentication
+
+* JWT
+* Role-Based Access Control
+
+### Testing
+
+* Jest
+* React Testing Library
+* Supertest
+
+### DevOps & Tools
+
+* Docker
+* Git
+* GitHub
+* GitHub Actions
+* VS Code
+* npm
+* Vite
+
+---
+
+## 🏗️ CRUD Project Architecture
 
 ```text
-blood-donation-system/
-│
-├── client/                              # Frontend React application
-│   ├── src/
-│   │   ├── components/                  # Reusable React components
-│   │   │   ├── Navbar.jsx
-│   │   │   ├── Footer.jsx
-│   │   │   ├── DonorForm.jsx
-│   │   │   ├── RequestForm.jsx
-│   │   │   └── Dashboard.jsx
-│   │   │
-│   │   ├── pages/                       # Page components
-│   │   │   ├── Home.jsx
-│   │   │   ├── Login.jsx
-│   │   │   ├── Register.jsx
-│   │   │   ├── DonorSearch.jsx
-│   │   │   ├── RequestTracker.jsx
-│   │   │   └── AdminPanel.jsx
-│   │   │
-│   │   ├── context/                     # React Context API
-│   │   │   └── AuthContext.jsx
-│   │   │
-│   │   ├── hooks/                       # Custom React hooks
-│   │   │   ├── useAuth.js
-│   │   │   └── useFetch.js
-│   │   │
-│   │   ├── services/                    # API service layer
-│   │   │   ├── authService.js
-│   │   │   ├── donorService.js
-│   │   │   ├── requestService.js
-│   │   │   └── adminService.js
-│   │   │
-│   │   ├── styles/                      # Global and component styles
-│   │   │   ├── index.css
-│   │   │   ├── components.css
-│   │   │   └── pages.css
-│   │   │
-│   │   ├── App.jsx                      # Root component
-│   │   └── main.jsx                     # Application entry point
-│   │
-│   ├── package.json
-│   ├── vite.config.js
-│   ├── eslint.config.js
-│   └── README.md
-│
-├── server/                              # Backend Express application
-│   ├── models/                          # Mongoose schemas
-│   │   ├── User.js
-│   │   ├── Donor.js
-│   │   ├── BloodRequest.js
-│   │   └── Admin.js
-│   │
-│   ├── routes/                          # API route definitions
-│   │   ├── auth.js
-│   │   ├── donors.js
-│   │   ├── requests.js
-│   │   ├── admin.js
-│   │   └── users.js
-│   │
-│   ├── controllers/                     # Business logic
-│   │   ├── authController.js
-│   │   ├── donorController.js
-│   │   ├── requestController.js
-│   │   └── adminController.js
-│   │
-│   ├── middleware/                      # Custom middleware
-│   │   ├── auth.js                      # JWT verification
-│   │   ├── roleCheck.js                 # Role-based access
-│   │   └── errorHandler.js              # Error handling
-│   │
-│   ├── config/                           # Configuration files
-│   │   ├── database.js                  # MongoDB connection
-│   │   └── constants.js                 # Application constants
-│   │
-│   ├── scripts/                          # Utility scripts
-│   │   └── makeAdmin.js                 # Admin creation script
-│   │
-│   ├── utils/                            # Utility functions
-│   │   ├── validators.js
-│   │   ├── tokenGenerator.js
-│   │   └── emailService.js
-│   │
-│   ├── server.js                         # Backend entry point
-│   ├── package.json
-│   ├── .env.example
-│   └── README.md
-│
-├── .gitignore
-├── LICENSE                               # MIT License
-└── README.md                             # Project documentation
-```
-
----
-
-# 🚀 Installation
-
-## Prerequisites
-
-Before installing the project, make sure you have:
-
-* **Node.js v16 or higher**
-* **MongoDB** local installation or MongoDB Atlas
-* **npm** or **Yarn**
-* **Git**
-
----
-
-## Backend Setup
-
-### 1. Clone the Repository
-
-```bash
-git clone https://github.com/rajeshchowke4/blood-donation-system.git
-cd blood-donation-system/server
-```
-
-### 2. Install Dependencies
-
-```bash
-npm install
-```
-
-### 3. Configure Environment Variables
-
-Copy the example environment file:
-
-```bash
-cp .env.example .env
-```
-
-Update the `.env` file with your configuration:
-
-```env
-PORT=5000
-MONGODB_URI=mongodb+srv://username:password@cluster.mongodb.net/blood-donation
-JWT_SECRET=your_jwt_secret_key_here
-NODE_ENV=development
-CLIENT_URL=http://localhost:5173
-```
-
-> **Note:** Replace the MongoDB username, password, cluster URL, and JWT secret with your actual values.
-
-### 4. Start the Backend Server
-
-```bash
-npm run dev
-```
-
-The backend server will run at:
-
-```text
-http://localhost:5000
-```
-
----
-
-# 💻 Frontend Setup
-
-Open another terminal and navigate to the client directory:
-
-```bash
-cd ../client
-```
-
-### 1. Install Dependencies
-
-```bash
-npm install
-```
-
-### 2. Configure Environment Variables
-
-Create a `.env` file:
-
-```bash
-cp .env.example .env
-```
-
-Update it with:
-
-```env
-VITE_API_URL=http://localhost:5000/api
-```
-
-### 3. Start the Development Server
-
-```bash
-npm run dev
-```
-
-The frontend application will run at:
-
-```text
-http://localhost:5173
-```
-
----
-
-# ⚙️ Configuration
-
-The application uses environment variables for database connections, authentication, and frontend/backend communication.
-
-### Backend `.env`
-
-```env
-PORT=5000
-MONGODB_URI=your_mongodb_connection_string
-JWT_SECRET=your_jwt_secret_key
-NODE_ENV=development
-CLIENT_URL=http://localhost:5173
-```
-
-### Frontend `.env`
-
-```env
-VITE_API_URL=http://localhost:5000/api
-```
-
-> **Security:** Never commit your `.env` file or expose your JWT secret and MongoDB credentials publicly.
-
----
-
-# 📊 Database Schema
-
-## Users Collection
-
-```javascript
-{
-  _id: ObjectId,
-  name: String,
-  email: String,             // Unique
-  password: String,          // Hashed
-  role: String,              // "donor", "staff", "admin"
-  bloodGroup: String,
-  city: String,
-  phone: String,
-  isVerified: Boolean,
-  createdAt: Date,
-  updatedAt: Date
-}
-```
-
-## Blood Requests Collection
-
-```javascript
-{
-  _id: ObjectId,
-  recipientName: String,
-  bloodGroup: String,
-  quantity: Number,
-  hospital: String,
-  city: String,
-  status: String,            // "pending", "approved", "completed", "rejected"
-  requiredBy: Date,
-  submittedBy: ObjectId,     // User reference
-  approvedBy: ObjectId,      // Staff reference
-  createdAt: Date,
-  updatedAt: Date
-}
-```
-
----
-
-# 🔐 JWT Configuration
-
-The application uses **JSON Web Tokens (JWT)** for authentication.
-
-### Configuration
-
-```text
-Algorithm: HS256
-Expiration: 24 hours
-```
-
-### JWT Payload
-
-```javascript
-{
-  userId,
-  role,
-  email
-}
-```
-
-The generated JWT is sent with protected API requests using the following header:
-
-```http
-Authorization: Bearer <jwt_token>
-```
-
----
-
-# 📖 API Usage
-
-## User Registration
-
-### Request
-
-```http
-POST /api/auth/register
-Content-Type: application/json
-```
-
-### Body
-
-```json
-{
-  "name": "John Doe",
-  "email": "john@example.com",
-  "password": "securePassword123",
-  "bloodGroup": "O+",
-  "city": "New York",
-  "phone": "1234567890"
-}
-```
-
----
-
-## User Login
-
-### Request
-
-```http
-POST /api/auth/login
-Content-Type: application/json
-```
-
-### Body
-
-```json
-{
-  "email": "john@example.com",
-  "password": "securePassword123"
-}
-```
-
----
-
-## Search Donors
-
-### Request
-
-```http
-GET /api/donors/search?bloodGroup=O+&city=New%20York
-Authorization: Bearer <jwt_token>
-```
-
-This endpoint searches for donors based on blood group and city.
-
----
-
-## Submit Blood Request
-
-### Request
-
-```http
-POST /api/requests
-Content-Type: application/json
-Authorization: Bearer <jwt_token>
-```
-
-### Body
-
-```json
-{
-  "recipientName": "Patient Name",
-  "bloodGroup": "O+",
-  "quantity": 2,
-  "hospital": "City Hospital",
-  "city": "New York",
-  "requiredBy": "2024-10-15"
-}
-```
-
----
-
-# 🏗️ Architecture
-
-## Authentication Flow
-
-```text
-┌──────────────┐
-│    Client    │
-└──────┬───────┘
-       │
-       ▼
-┌──────────────┐
-│     Login    │
-└──────┬───────┘
-       │
-       ▼
 ┌──────────────────────┐
-│ Server validates     │
-│ user credentials     │
+│      React App       │
+│   Frontend / UI      │
 └──────────┬───────────┘
            │
+           │ REST API
            ▼
 ┌──────────────────────┐
-│ JWT token generated  │
-│ and returned         │
+│   Node.js + Express  │
+│      Backend         │
 └──────────┬───────────┘
            │
+           │ SQL
            ▼
 ┌──────────────────────┐
-│ Client stores token  │
-│ localStorage /       │
-│ sessionStorage       │
-└──────────┬───────────┘
-           │
-           ▼
-┌──────────────────────┐
-│ Token included in    │
-│ protected requests   │
+│        MySQL         │
+│       Database       │
 └──────────────────────┘
 ```
 
 ---
 
-## Blood Request Workflow
+## 💻 Getting Started — CRUD Project
+
+### 1. Clone the repository
+
+```bash
+git clone https://github.com/rajeshchowke4/first-job-portfolio.git
+```
+
+### 2. Navigate to the project
+
+```bash
+cd first-job-portfolio
+```
+
+### 3. Install dependencies
+
+```bash
+npm install
+```
+
+### 4. Configure environment variables
+
+Create a `.env` file using `.env.example`:
+
+```bash
+cp .env.example .env
+```
+
+Add your database configuration and JWT secret to `.env`.
+
+### 5. Start the development server
+
+```bash
+npm run dev
+```
+
+### 6. Open the application
 
 ```text
-Donor Registration
-        ↓
-Donor Profile Creation
-        ↓
-Recipient Submits Blood Request
-        ↓
-Staff Reviews Request
-        ↓
-Request Approved / Rejected
-        ↓
-Donor Notified
-        ↓
-Request Completed
-        ↓
-Request Tracked
+http://localhost:3000
 ```
 
 ---
 
-# 📝 API Endpoints
+## 🌐 Live Portfolio
 
-## Authentication
-
-| Method | Endpoint             | Description       |
-| ------ | -------------------- | ----------------- |
-| POST   | `/api/auth/register` | User registration |
-| POST   | `/api/auth/login`    | User login        |
-| POST   | `/api/auth/logout`   | User logout       |
-
-## Donors
-
-| Method | Endpoint             | Description                   |
-| ------ | -------------------- | ----------------------------- |
-| GET    | `/api/donors`        | List all donors — staff/admin |
-| GET    | `/api/donors/search` | Search donors by criteria     |
-| GET    | `/api/donors/:id`    | Get donor details             |
-| PUT    | `/api/donors/:id`    | Update donor profile          |
-
-## Blood Requests
-
-| Method | Endpoint                   | Description                         |
-| ------ | -------------------------- | ----------------------------------- |
-| GET    | `/api/requests`            | List requests based on role         |
-| POST   | `/api/requests`            | Create a blood request              |
-| GET    | `/api/requests/:id`        | Get request details                 |
-| PUT    | `/api/requests/:id/status` | Update request status — staff/admin |
-
-## Admin
-
-| Method | Endpoint                       | Description           |
-| ------ | ------------------------------ | --------------------- |
-| GET    | `/api/admin/users`             | List all users        |
-| GET    | `/api/admin/statistics`        | Get system statistics |
-| POST   | `/api/admin/users/:id/promote` | Promote a user role   |
+🚀 **[Visit My Live Portfolio](https://rajeshchowke4.github.io/first-job-portfolio/)**
 
 ---
 
-# 🤝 Contributing
+## 📸 Screenshots
 
-Contributions are welcome!
+Add screenshots of your applications inside the `assets` folder.
 
-### 1. Fork the Repository
+### CRUD Product Management App
 
-Fork this repository to your GitHub account.
-
-### 2. Create a Feature Branch
-
-```bash
-git checkout -b feature/AmazingFeature
+```markdown
+![CRUD App Screenshot](./assets/crud-screenshot.png)
 ```
 
-### 3. Commit Your Changes
+### Blood Donation Management System
 
-```bash
-git commit -m "Add some AmazingFeature"
+```markdown
+![Blood Donation System Screenshot](./assets/blood-donation-screenshot.png)
 ```
-
-### 4. Push the Branch
-
-```bash
-git push origin feature/AmazingFeature
-```
-
-### 5. Open a Pull Request
-
-Create a Pull Request on GitHub describing your changes.
 
 ---
 
-# 📄 License
+## 🧪 Testing
+
+The CRUD project includes unit and integration tests using:
+
+* Jest
+* Supertest
+* React Testing Library
+
+Run the tests with:
+
+```bash
+npm test
+```
+
+---
+
+## ⚙️ CI/CD
+
+GitHub Actions is configured to automatically run tests when code is pushed to the `main` branch.
+
+```text
+Git Push
+   ↓
+GitHub Actions
+   ↓
+Install Dependencies
+   ↓
+Run Tests
+   ↓
+Build / Deploy
+```
+
+---
+
+## 📚 What I Learned
+
+Through these projects, I learned:
+
+* How to build full-stack web applications
+* Designing and developing REST APIs
+* Working with MySQL and MongoDB
+* Connecting React applications with backend APIs
+* Implementing authentication
+* Implementing JWT authorization
+* Role-based access control
+* CRUD operations
+* Writing automated tests
+* Using Git and GitHub effectively
+* Creating CI/CD workflows
+* Containerizing applications with Docker
+* Deploying web applications
+* Building responsive user interfaces
+
+---
+
+## 🔮 Future Improvements
+
+* [ ] Add pagination
+* [ ] Add role-based authentication
+* [ ] Add Cypress E2E testing
+* [ ] Improve UI/UX
+* [ ] Add advanced product filtering
+* [ ] Add blood inventory management
+* [ ] Add email notifications
+* [ ] Add donor eligibility management
+* [ ] Improve Docker production setup
+* [ ] Add Kubernetes deployment
+
+---
+
+## 👨‍💻 About Me
+
+**Rajesh Chowke**
+Aspiring Junior Full-Stack Developer
+
+I'm currently focused on improving my full-stack development skills and building real-world projects.
+
+### 📫 Contact
+
+* 📧 Email: [rajeshchouke4@example.com](mailto:rajeshchouke4@example.com)
+* 💼 LinkedIn: https://linkedin.com/in/rajeshchowke
+* 📄 Resume: [View Resume](./resume.pdf)
+
+---
+
+## 📂 Other Projects
+
+Check out my GitHub repositories for more projects involving:
+
+* React
+* JavaScript
+* Node.js
+* Express.js
+* Python
+* Flutter
+* MongoDB
+* MySQL
+
+---
+
+## 📄 License
 
 This project is licensed under the **MIT License**.
-
-See the [LICENSE](LICENSE) file for more information.
-
----
-
-# 👤 Author
-
-## Rajesh Chowke
-
-**GitHub:** [@rajeshchowke4](https://github.com/rajeshchowke4)
-
----
-
-# 🙏 Acknowledgments
-
-Special thanks to the communities and technologies that make this project possible:
-
-* ⚛️ React and Vite communities for excellent frontend tooling
-* 🍃 MongoDB and Mongoose for database solutions
-* 🚀 Express.js for the backend framework
-* 🟢 Node.js for the JavaScript runtime
-* 🐙 GitHub for version control and collaboration
-
----
-
-## ⭐ Project Overview
-
-The **Blood Donation System** provides a centralized platform for connecting blood donors with people who need blood. It supports user authentication, donor searching, blood request management, staff approval workflows, and administrative operations.
-
-### Key Components
-
-| Component       | Technology                |
-| --------------- | ------------------------- |
-| Frontend        | React + Vite              |
-| Backend         | Node.js + Express.js      |
-| Database        | MongoDB + Mongoose        |
-| Authentication  | JWT                       |
-| Authorization   | Role-Based Access Control |
-| API             | REST API                  |
-| Version Control | Git + GitHub              |
-
----
-
-## 🚀 Getting Started
-
-After completing the setup, run the backend and frontend in separate terminals.
-
-### Terminal 1 — Backend
-
-```bash
-cd blood-donation-system/server
-npm install
-npm run dev
-```
-
-### Terminal 2 — Frontend
-
-```bash
-cd blood-donation-system/client
-npm install
-npm run dev
-```
-
-Then open:
-
-```text
-Frontend: http://localhost:5173
-Backend:  http://localhost:5000
-```
-
----
-
-This professional README includes:
-- ✅ Comprehensive table of contents
-- ✅ Detailed project structure with descriptions
-- ✅ Complete installation instructions
-- ✅ Environment configuration
-- ✅ Database schema examples
-- ✅ API endpoints documentation
-- ✅ Architecture diagrams
-- ✅ Usage examples
-- ✅ Contributing guidelines
-- ✅ Professional formatting and organization
-
-You can now use this README as your repository's main documentation!
