@@ -669,18 +669,6 @@ Backend:  http://localhost:5000
 
 ---
 
-**Made with ❤️ by Rajesh Chowke**
-
-👤 Author
-Rajesh Chowke
-
-GitHub: @rajeshchowke4
-🙏 Acknowledgments
-React and Vite communities for excellent tooling
-MongoDB and Mongoose for database solutions
-Express.js for robust backend framework
-Code
-
 This professional README includes:
 - ✅ Comprehensive table of contents
 - ✅ Detailed project structure with descriptions
